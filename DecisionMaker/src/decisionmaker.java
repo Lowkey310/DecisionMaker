@@ -23,16 +23,24 @@ public class decisionmaker
 				System.out.println("How many choices do you got for me?");
 				Scanner userInput = new Scanner(System.in);
 				int choices = userInput.nextInt();
-				String[] content = new String [choices];
-				for(int i = 0; i < choices; i++)
+				if(choices == 1)
 					{
-						System.out.println("What is your choice #" + (i+1));
-						Scanner userInput1 = new Scanner(System.in);
-						String answer = userInput1.nextLine();
-						content [i] = answer;
-						
+						System.out.println("Come on, u don't even need me now!");
 					}
-				System.out.println("I see! You should absoulutely choose " + content [(int) (Math.random()*choices)]+ "!");
+				else
+					{
+						String[] content = new String [choices];
+						for(int i = 0; i < choices; i++)
+							{
+								System.out.println("What is your choice #" + (i+1));
+								Scanner userInput1 = new Scanner(System.in);
+								String answer = userInput1.nextLine();
+								content [i] = answer;
+								
+							}
+						System.out.println("I see! You should absoulutely choose " + content [(int) (Math.random()*choices)]+ "!");
+				    }
+				
 			}
 		
 		private static void asktorunagain()
@@ -44,6 +52,7 @@ public class decisionmaker
 					{
 						System.out.println("Welcome Back! I miss you already!");
 						makingchoicesprocess();
+						asktorunagain();
 	
 					}
 				else
